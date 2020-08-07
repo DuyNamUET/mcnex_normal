@@ -128,7 +128,7 @@ class App(QWidget):
 
         # Start button
         self.start_button = QPushButton("START",self)
-        self.start_button.setGeometry(1428, 780, 180, 100)
+        self.start_button.setGeometry(1420, 780, 180, 180)
         self.start_button.clicked.connect(self.clickStartButton)
         self.start_button.setStyleSheet("background-color: rgb(67, 138, 94);"
                                         "font: bold 20px;"
@@ -139,7 +139,7 @@ class App(QWidget):
 
         # Stop button
         self.stop_button = QPushButton("STOP",self)
-        self.stop_button.setGeometry(1651, 780, 180, 100)
+        self.stop_button.setGeometry(1655, 780, 180, 100)
         self.stop_button.clicked.connect(self.clickStopButton)
         self.stop_button.setStyleSheet("background-color: rgb(232, 80, 91);"
                                         "font: bold 20px;"
@@ -150,7 +150,7 @@ class App(QWidget):
 
         # Home button
         self.home_button = QPushButton("HOME",self)
-        self.home_button.setGeometry(1651, 920, 180, 100)
+        self.home_button.setGeometry(1655, 920, 180, 100)
         self.home_button.clicked.connect(self.clickHomeButton)
         self.home_button.setStyleSheet("background-color: rgb(50, 130, 184);"
                                         "font: bold 20px;"
@@ -161,7 +161,7 @@ class App(QWidget):
 
         # Reset button
         self.reset_button = QPushButton("RESET",self)
-        self.reset_button.setGeometry(1428, 920, 180, 100)
+        self.reset_button.setGeometry(1185, 780, 180, 100)
         self.reset_button.clicked.connect(self.clickResetButton)
         self.reset_button.setStyleSheet("background-color: rgb(249, 210, 118);"
                                         "font: bold 20px;"
@@ -172,7 +172,7 @@ class App(QWidget):
 
         # Calibrate button
         self.calibrate_button = QPushButton("CALIBRATE",self)
-        self.calibrate_button.setGeometry(1145, 780, 240, 240)
+        self.calibrate_button.setGeometry(1185, 920, 240, 240)
         self.calibrate_button.clicked.connect(self.clickAlignButton)
         self.calibrate_button.setStyleSheet("background-color: rgb(50, 130, 184);"
                                             "font: bold 20px;"
