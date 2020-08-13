@@ -48,7 +48,7 @@ class Thread(QThread):
 
                 self.rawCapture.truncate(0)
                 self.img.emit(resize_img)
-                self.data.emit(cam)
+                # self.data.emit(cam)
 
                 
             elif cmd == "1":
@@ -89,11 +89,11 @@ class App(QWidget):
         
         # Logo
         self.mcnex_logo = QLabel(self)
-        self.mcnex_pixmap = QPixmap('/home/pi/mcnex_v2/logo/mcnex.png').scaled(273,130,Qt.KeepAspectRatio)
+        self.mcnex_pixmap = QPixmap('/home/pi/mcnex_normal/logo/mcnex.png').scaled(273,130,Qt.KeepAspectRatio)
         self.mcnex_logo.setPixmap(self.mcnex_pixmap)
         self.mcnex_logo.setGeometry(120, 20, 273, 130)
         self.uet_logo = QLabel(self)
-        self.uet_pixmap = QPixmap('/home/pi/mcnex_v2/logo/uet.png').scaled(128,130,Qt.KeepAspectRatio)
+        self.uet_pixmap = QPixmap('/home/pi/mcnex_normal/logo/uet.png').scaled(128,130,Qt.KeepAspectRatio)
         self.uet_logo.setPixmap(self.uet_pixmap)
         self.uet_logo.setGeometry(440, 20, 128, 130)
 
@@ -128,7 +128,7 @@ class App(QWidget):
 
         # Start button
         self.start_button = QPushButton("START",self)
-        self.start_button.setGeometry(1420, 780, 180, 180)
+        self.start_button.setGeometry(1615, 780, 220, 240)
         self.start_button.clicked.connect(self.clickStartButton)
         self.start_button.setStyleSheet("background-color: rgb(67, 138, 94);"
                                         "font: bold 20px;"
@@ -139,7 +139,7 @@ class App(QWidget):
 
         # Stop button
         self.stop_button = QPushButton("STOP",self)
-        self.stop_button.setGeometry(1655, 780, 180, 100)
+        self.stop_button.setGeometry(1400, 780, 180, 100)
         self.stop_button.clicked.connect(self.clickStopButton)
         self.stop_button.setStyleSheet("background-color: rgb(232, 80, 91);"
                                         "font: bold 20px;"
@@ -150,7 +150,7 @@ class App(QWidget):
 
         # Home button
         self.home_button = QPushButton("HOME",self)
-        self.home_button.setGeometry(1655, 920, 180, 100)
+        self.home_button.setGeometry(1400, 920, 180, 100)
         self.home_button.clicked.connect(self.clickHomeButton)
         self.home_button.setStyleSheet("background-color: rgb(50, 130, 184);"
                                         "font: bold 20px;"
@@ -172,7 +172,7 @@ class App(QWidget):
 
         # Calibrate button
         self.calibrate_button = QPushButton("CALIBRATE",self)
-        self.calibrate_button.setGeometry(1185, 920, 240, 240)
+        self.calibrate_button.setGeometry(1185, 920, 180, 100)
         self.calibrate_button.clicked.connect(self.clickAlignButton)
         self.calibrate_button.setStyleSheet("background-color: rgb(50, 130, 184);"
                                             "font: bold 20px;"
@@ -210,7 +210,7 @@ class App(QWidget):
                                     "color: rgb(255, 255, 255);"
                                     "font: bold 14pt;")
             table = QTableWidget(7,3,self)
-            table.setGeometry(773+275*i,358,242,352)
+            table.setGeometry(735+275*i,358,242,352)
             table.horizontalHeader().hide()
             table.verticalHeader().hide()
             for j in range(3):
@@ -222,7 +222,7 @@ class App(QWidget):
             self.tray.append(table)
 
         # Statistics table
-        self.statistic_table = QTableWidget(2,3,self)
+        self.statistic_table = QTableWidget(3,2,self)
         self.statistic_table.setGeometry(695, 780, 420, 240)
         self.statistic_table.horizontalHeader().hide()
         self.statistic_table.verticalHeader().hide()
@@ -235,7 +235,7 @@ class App(QWidget):
         for j in range(2):
             self.statistic_table.setColumnWidth(j,205)
         for j in range(3):
-            self.statistic_table.setRowHeight(j,77)
+            self.statistic_table.setRowHeight(j,76)
         total_item = QTableWidgetItem("TOTAL")
         total_item.setTextAlignment(Qt.AlignCenter)
         self.statistic_table.setItem(0,0,total_item)
@@ -358,7 +358,7 @@ class App(QWidget):
 
 class AlignWindow(QWidget):
     def __init__(self):
-        super(AlignWindow, self).__init__(None, Qt.WindowStaysOnTopHint | FramelessWindowHint)
+        super(AlignWindow, self).__init__(None, Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint)
         self.title = "CALIBRATION"
         self.left = 1300; self.top = 550
         self.width = 500; self.height = 500
